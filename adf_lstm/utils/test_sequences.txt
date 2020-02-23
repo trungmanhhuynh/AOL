@@ -1,4 +1,0 @@
-eth_pedcross2
-eth_bahnhof
-eth_jelmoli
-eth_sunnyday

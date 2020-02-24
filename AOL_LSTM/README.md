@@ -55,9 +55,9 @@ Important parameters:
 ```
 split=4 && CUDA_VISIBLE_DEVICES=3 python adf_test.py --test_data processed_data/fpl/id_list/val_data_split_$split.joblib --resume_model save/LSTM/id_list/split$split/models/model_epoch_100 --obs_len 10 --save_root save/LSTM/id_list/split$split --pred_len 10 --use_cuda --batch_size 1 --num_past_chunks 1 --max_models 1
 ```
-Important parameters: 
---split: specify which split to test 
---resume_model: save model file 
+Important parameters:  
+--split: specify which split to test  
+--resume_model: save model file  
 
 Without Adaptation: specify --num_past_chunks 0 --max_models 1
 B-AOL: specify --num_past_chunks 1 --max_models 1
@@ -69,11 +69,11 @@ AOL: specify --num_past_chunks 1 --max_models 10
 CUDA_VISIBLE_DEVICES=3 python adf_test.py --test_data processed_data/eth/test_data.joblib --resume_model save/LSTM/id_list/split0/models/model_epoch_100 --obs_len 10 --save_root save/LSTM/eth/ --pred_len 10 --use_cuda --batch_size 1 --num_past_chunks 0 --max_models 1 --traj_file eth_traj.json
 ```
 
-Important parameters: 
---split: specify which split to test 
---resume_model: save model file 
---traj_file: specify if wanting to save trajectories
-
-Without Adaptation: specify --num_past_chunks 0 --max_models 1
-B-AOL: specify --num_past_chunks 1 --max_models 1
-AOL: specify --num_past_chunks 1 --max_models 10
+Important parameters:  
+--split: specify which split to test  
+--resume_model: save model file  
+--traj_file: specify if wanting to save trajectories  
+  
+Without Adaptation: specify --num_past_chunks 0 --max_models 1  
+B-AOL: specify --num_past_chunks 1 --max_models 1  
+AOL: specify --num_past_chunks 1 --max_models 10  

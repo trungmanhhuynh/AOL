@@ -1,11 +1,11 @@
 # AOL + LSTM 
 
 
-# Environment: 
+## Environment: 
   pytorch 1.0.0 
 
-# Pre-processed data
-## FPL dataset
+## Pre-processed data
+#### FPL dataset
 Download the processed data from FPL.
 
 Run the following script:
@@ -21,7 +21,7 @@ Specify the following parameters:
   --output_dir : output data files 
 https://drive.google.com/open?id=0B7EVK8r0v71pOXBhSUdJWU1MYUk
 
-## ETH dataset.
+#### ETH dataset.
 Download the processed data and extract it to raw_data_json. 
 ```
 gdown https://drive.google.com/uc?id=1AsNryRzah21DRlhga0sOM_o27MYyM5hh
@@ -41,7 +41,7 @@ Specify the following parameters:
  --data_file: video sequences used for training/testing. 
  --output_dir: output directory
 
-# Train on FPL dataset
+## Train on FPL dataset
 
 ```
 CUDA_VISIBLE_DEVICES=3 && split=4 && python train.py --train_data processed_data/fpl/id_list/train_data_split_$split.joblib --val_data processed_data/fpl/id_list/val_data_split_$split.joblib --save_root save/LSTM/id_list/split$split --obs_len 10 --pred_len 10 --use_cuda --batch_size 64 --nepochs 100 --learning_rate 0.001
@@ -51,7 +51,7 @@ Important parameters:
 --split: which split of data used for training ? 
 
 
-# Test on FPL dataset
+## Test on FPL dataset
 ```
 split=4 && CUDA_VISIBLE_DEVICES=3 python adf_test.py --test_data processed_data/fpl/id_list/val_data_split_$split.joblib --resume_model save/LSTM/id_list/split$split/models/model_epoch_100 --obs_len 10 --save_root save/LSTM/id_list/split$split --pred_len 10 --use_cuda --batch_size 1 --num_past_chunks 1 --max_models 1
 ```
@@ -64,7 +64,7 @@ B-AOL: specify --num_past_chunks 1 --max_models 1
 AOL: specify --num_past_chunks 1 --max_models 10
 
 
-# Test eth datatset
+## Test eth datatset
 ```
 CUDA_VISIBLE_DEVICES=3 python adf_test.py --test_data processed_data/eth/test_data.joblib --resume_model save/LSTM/id_list/split0/models/model_epoch_100 --obs_len 10 --save_root save/LSTM/eth/ --pred_len 10 --use_cuda --batch_size 1 --num_past_chunks 0 --max_models 1 --traj_file eth_traj.json
 ```

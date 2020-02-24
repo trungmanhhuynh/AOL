@@ -19,7 +19,6 @@ Specify the following parameters:
   - id_list.txt if use 5 videos for testing or "id_list.txt" for full data 
   --eval_split : evaluation split (0->4)
   --output_dir : output data files 
-https://drive.google.com/open?id=0B7EVK8r0v71pOXBhSUdJWU1MYUk
 
 #### ETH dataset.
 Download the processed data and extract it to raw_data_json. 
